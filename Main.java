@@ -9,22 +9,16 @@ public class Main {
             Scanner fileScan = null;
             try {
                 fileScan = new Scanner (new File(args[i]));
-                //String line = fileScan.nextLine();
                 TreeSet<String> set = new TreeSet<>();
                 while (fileScan.hasNextLine()) {
                     String line = fileScan.nextLine();
                     StringTokenizer split = new StringTokenizer(line, " .[]();,!?'\":\t\r");
                     while (split.hasMoreTokens()) {
                         String toAdd = split.nextToken();
-                        //System.out.println("SUG " + toAdd + " PULA");
                         if (toAdd.trim().length() != 0)
                             set.add(toAdd.trim().toLowerCase());
                     }
-
-                    //System.out.println("LAST TOKEN " + tokens[tokens.length - 1]);
-                    //line = fileScan.nextLine();
                 }
-                // System.out.println(set);
                 dictionary.put(i + 1, set);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -33,12 +27,6 @@ public class Main {
                     fileScan.close();
             }
         }
-        //System.out.println(dictionary);
-        /*
-        for (Map.Entry<Integer, TreeSet<String>> entry : dictionary.entrySet()) {
-            System.out.println("No. " + entry.getKey());
-            System.out.println(entry.getValue());
-        } */
         Scanner scan = new Scanner(System.in);
         String word = scan.nextLine();
         while (!(word.equals(Utilities.exitWord))) {
