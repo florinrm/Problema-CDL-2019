@@ -27,7 +27,6 @@ public class Utilities {
             while (iter.hasNext()) {
                 String str = iter.next();
                 if (checkStrings(str, word)) {
-                    //System.out.println("IAU LA PULA " + str + " " + word);
                     if (!(result.containsKey(str))) {
                         TreeSet<Integer> value = new TreeSet<>();
                         value.add(index);
